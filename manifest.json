@@ -1,0 +1,26 @@
+{
+  "name": "Glexaフォーム維持",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Glexaのフォームを維持する",
+  //   "icons": {
+  //     "16": "images/icon-16.png",
+  //     "128": "images/icon-128.png"
+  //   },
+  "permissions": ["tabs", "http://*/*", "https://*/*", "background", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["js/contentscript.js"]
+    }
+  ],
+  "page_action": {
+    // "default_icon": {
+    //   "19": "images/icon-19.png",
+    //   "38": "images/icon-38.png"
+    // },
+    "default_title": "フォームデータ操作パネル",
+    "default_popup": "popup.html"
+  },
+  "background": { "scripts": ["js/hot-reload.js", "js/background.js"] }
+}
